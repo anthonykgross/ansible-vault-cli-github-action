@@ -2,7 +2,7 @@
 set -e
 
 RETURN=`docker run -e VAULT_KEY=1234 ansible-vault-cli-github-action:latest \
-  "echo 'lol' > foo.yml \
+  "echo 'fake confidential data' > foo.yml \
   && ansible-vault encrypt foo.yml \
   && cat foo.yml"
 `
@@ -13,10 +13,10 @@ if [[ $RETURN != *"$SUB"* ]]; then
   exit 1
 fi
 
-if [[ $RETURN == "lol" ]]; then
+if [[ $RETURN == "fake confidential data" ]]; then
   echo "File not encrypted."
   exit 1
 fi
 
 echo "File encrypted."
-exit 1
+exit 0
