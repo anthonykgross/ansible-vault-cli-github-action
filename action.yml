@@ -1,7 +1,8 @@
 name: "Ansible Vault CLI Github Action"
 description: "Allows one to run Ansible Vault and Linux related commands"
-color: "gray-dark"
-icon: "activity"
+branding:
+  color: "gray-dark"
+  icon: "activity"
 inputs:
   command:
     description: "Command to execute"
