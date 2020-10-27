@@ -19,4 +19,4 @@ if [[ $RETURN == "lol" ]]; then
 fi
 
 echo "File encrypted."
-exit 0
+exit 1
