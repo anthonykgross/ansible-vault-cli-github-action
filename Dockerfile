@@ -1,7 +1,7 @@
 FROM ubuntu:bionic
 
 ENV VAULT_KEY=''
-ENV DEFAULT_VAULT_PASSWORD_FILE='~/.vault_key'
+ENV ANSIBLE_VAULT_PASSWORD_FILE='/.vault_key'
 
 RUN apt-get update \
   && apt install -y python3-pip

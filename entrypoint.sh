@@ -1,4 +1,5 @@
-#!/bin/sh -l
+#!/bin/bash
 
-echo "$VAULT_KEY > $DEFAULT_VAULT_PASSWORD_FILE"
+echo $VAULT_KEY > $ANSIBLE_VAULT_PASSWORD_FILE
+VAULT_KEY='************'
 eval $1
