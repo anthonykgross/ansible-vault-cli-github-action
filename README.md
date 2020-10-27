@@ -10,6 +10,10 @@ You can also execute standard `Linux` commands as base `Docker` image is `ubuntu
 
 **Required** Command to execute. Default `"ansible-vault"`.
 
+### `vault_key`
+
+**Required** Your vault key. Default `''`.
+
 ## Example usage
 
 ```
