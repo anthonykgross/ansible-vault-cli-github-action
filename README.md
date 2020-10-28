@@ -17,7 +17,7 @@ You can also execute standard `Linux` commands as base `Docker` image is `ubuntu
 ## Example usage
 
 ```
-uses: actions/ansible-vault-cli-action@latest
+uses: anthonykgross/ansible-vault-cli-github-action@v1
 with:
   vault_key: ${{ secrets.vault_key }}
   command: "ansible-vault decrypt foo.yml bar.yml"
