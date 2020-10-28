@@ -16,6 +16,6 @@ runs:
   using: "docker"
   image: "Dockerfile"
   env:
-    - VAULT_KEY=${{ inputs.vault_key }}
+    VAULT_KEY: ${{ inputs.vault_key }}
   args:
     - ${{ inputs.command }}
