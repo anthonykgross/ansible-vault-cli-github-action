@@ -2,7 +2,7 @@
 set -e
 
 DATA='fake confidential data'
-ENCRYPTED_DATA=`docker run -e VAULT_KEY=1234 ansible-vault-cli-github-action:latest \
+ENCRYPTED_DATA=`docker run -e VAULT_KEY=1234 anthonykgross/ansible-vault-cli-github-action:latest \
   "echo '$DATA' > foo.yml \
   && ansible-vault encrypt foo.yml \
   && cat foo.yml"
@@ -22,7 +22,8 @@ echo "Data encrypted."
 
 ENCRYPTED_DATA=$(echo "$ENCRYPTED_DATA" | sed -r 's/[\$]+/\\\$/g' | sed -r ':a;N;$!ba;s/\n/\\n/g')
 
-DECRYPTED_DATA=`docker run -e VAULT_KEY=1234 ansible-vault-cli-github-action:latest \
+DECRYPTED_DATA=`docker run -e VAULT_KEY=1234 anthonykgross/ansible-vault-cli-github-action
+:latest \
   "echo -e \"$ENCRYPTED_DATA\" > foo.yml \
   && ansible-vault decrypt foo.yml \
   && cat foo.yml"
