@@ -14,7 +14,7 @@ inputs:
     default: ""
 runs:
   using: "docker"
-  image: "Dockerfile"
+  image: "anthonykgross/ansible-vault-cli-github-action:latest"
   env:
     VAULT_KEY: ${{ inputs.vault_key }}
   args:
