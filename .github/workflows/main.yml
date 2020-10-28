@@ -18,7 +18,7 @@ jobs:
       run: docker build . --file Dockerfile --tag ansible-vault-cli-github-action:latest
     - name: Create encrypted file
       run: bash tests/tests.sh
-    - uses: actions/ansible-vault-cli-github-action@latest
+    - uses: ./
       with:
         vault_key: '1234'
         command: "echo 'fake confidential data' > foo.yml && ansible-vault encrypt foo.yml && cat foo.yml"
